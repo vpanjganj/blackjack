@@ -1,7 +1,35 @@
 logs/*
 !.gitkeep
+
+tmp
+
+
+# 3rd Party libs
+/vendor
+
+
+# Directory-based project format
+.idea/
+
+
+
+# Ignore the Vendors
 node_modules/
 bower_components/
-tmp
+
+# Env variables
+.env
+
+
+# Ignore CSS & Map File
+*.css
+*.map
+
+# OS generated files #
+######################
 .DS_Store
-.idea
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

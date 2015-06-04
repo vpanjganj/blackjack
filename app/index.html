@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <title>Blackjack</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Blackjack">
+
+    <title>Heroic Features - Start Bootstrap Template</title>
+
+    <!-- CSS -->
+    <link href="app.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body ng-app="blackjack">
+<div id="wrapper" ng-controller="GameController">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <img src="images/dealer.png" class="dealer">
+            </li>
+            <li><p><a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a></p></li>
+            <li><span class="card">&#x1f0a0;</span>
 
-  <div ng-view></div>
+                <span class="card">&#x1f0a1;</span>
+                <span class="card"> &#x1f0ae;</span>
 
-  <div>Angular seed app: v<span app-version></span></div>
+                <span class="card"> &#x1f0b1;</span>
+                <span class="card"> &#x1f0be;</span>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+                <span class="card">&#x1f0c1;</span>
+                <span class="card"> &#x1f0ce;</span>
+
+                <span class="card"> &#x1f0d1;</span>
+                <span class="card"> &#x1f0de;</span> </li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Simple Sidebar</h1>
+
+                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller
+                        screens, and will appear non-collapsed on larger screens. When toggled using the button below,
+                        the menu will appear/disappear. On small screens, the page content will be pushed off
+                        canvas.</p>
+
+                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrapsm and libs -->
+<script src="angular.min.js"></script>
+<script src="ui-bootstrap-tpls.min.js"></script>
+
+
+<!-- Scripts -->
+<script src="app.js"></script>
+
 </body>
 </html>
