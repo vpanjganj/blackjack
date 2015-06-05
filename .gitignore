@@ -4,8 +4,8 @@ logs/*
 tmp
 
 
-# 3rd Party libs
-/vendor
+# Logs
+*.log
 
 
 # Directory-based project format
