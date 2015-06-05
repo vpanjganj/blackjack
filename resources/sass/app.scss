@@ -1,8 +1,8 @@
 
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-
 // Modifications
-body{  background: url(images/table.png);
+body{  background: url('images/table.png');
 }
 #wrapper {
   padding-left: 250px;
@@ -49,6 +49,17 @@ body{  background: url(images/table.png);
   border: solid 1px #444;
   margin: 5px 5px 5px -30px;
 }
+.card:first-child { margin: 5px 60px 5px 0px;}
+
+
+.card:nth-last-child(2),.card:nth-last-child(1) {
+  margin: 5px 5px 5px -30px;
+}
+
+.player a{display: none;}
+
+.player:hover a{display: inline-block;}
+
 
 @media screen and (max-width: 767px) {
   #wrapper {
@@ -77,4 +88,5 @@ body{  background: url(images/table.png);
   width: 140px;
   margin-bottom: 20px;
 }
+
 

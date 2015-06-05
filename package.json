@@ -14,8 +14,8 @@
     "gulp-sourcemaps": "^1.5.2"
   },
   "scripts": {
-    "postinstall": "bower install",
-    "postinstall": "gulp default",
+    "postinstall": "bower install;gulp default",
+
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install"
