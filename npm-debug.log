@@ -1,25 +1,25 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'uninstall', 'http-server' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 verbose node_modules/http-server unbuild
-5 info preuninstall http-server@0.8.0
-6 info uninstall http-server@0.8.0
-7 verbose true,/Users/Vahid/Projects/blackjack/node_modules,/Users/Vahid/Projects/blackjack/node_modules unbuild http-server@0.8.0
-8 verbose /Users/Vahid/Projects/blackjack/node_modules/.bin,[object Object] binRoot
-9 error Error: EACCES, unlink '/Users/Vahid/Projects/blackjack/node_modules/.bin/http-server'
-9 error  { [Error: EACCES, unlink '/Users/Vahid/Projects/blackjack/node_modules/.bin/http-server']
-9 error   errno: 3,
-9 error   code: 'EACCES',
-9 error   path: '/Users/Vahid/Projects/blackjack/node_modules/.bin/http-server' }
-10 error Please try running this command again as root/Administrator.
-11 error System Darwin 14.3.0
-12 error command "node" "/usr/local/bin/npm" "uninstall" "http-server"
-13 error cwd /Users/Vahid/Projects/blackjack
-14 error node -v v0.10.36
-15 error npm -v 1.4.28
-16 error path /Users/Vahid/Projects/blackjack/node_modules/.bin/http-server
-17 error code EACCES
-18 error errno 3
-19 error stack Error: EACCES, unlink '/Users/Vahid/Projects/blackjack/node_modules/.bin/http-server'
-20 verbose exit [ 3, true ]
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart blackjack@0.0.0
+6 verbose unsafe-perm in lifecycle true
+7 info blackjack@0.0.0 Failed to exec prestart script
+8 error blackjack@0.0.0 prestart: `npm install`
+8 error Exit status 1
+9 error Failed at the blackjack@0.0.0 prestart script.
+9 error This is most likely a problem with the blackjack package,
+9 error not with npm itself.
+9 error Tell the author that this fails on your system:
+9 error     npm install
+9 error You can get their info via:
+9 error     npm owner ls blackjack
+9 error There is likely additional logging output above.
+10 error System Darwin 14.3.0
+11 error command "node" "/usr/local/bin/npm" "start"
+12 error cwd /Users/Vahid/Projects/blackjack
+13 error node -v v0.10.36
+14 error npm -v 1.4.28
+15 error code ELIFECYCLE
+16 verbose exit [ 1, true ]
