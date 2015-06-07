@@ -8,14 +8,24 @@ var controllers = angular.module('controllers', []);
  *
  *
  */
-app.controller('gameController', ['$scope', '$location', 'player', function ($scope, $location, player) {
+app.controller('gameController', ['$scope', '$location', 'player', 'dealer', 'nameGenerator', function ($scope, $location, player, dealer, nameGenerator) {
 
 
-    // instantiate a new user
-    var user = new player('Vahid');
-    // fetch data and publish on scope
-    user.reciveCard();
+    // instantiate new user
+    var players = [];
 
+    nameGenerator = new nameGenerator();
+    for (var i = 1; i < 5; i++) {
+        players.push(new player(nameGenerator.generateName()));
+
+    }
+
+
+    var cardDealer = new dealer();
+    cardDealer.cardsDeck.shuffle();
+
+    $scope.dealer = cardDealer;
+    $scope.players = players;
 
 
 }]);

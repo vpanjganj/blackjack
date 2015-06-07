@@ -29,255 +29,87 @@
             <li class="sidebar-brand">
                 <img src="images/dealer.gif" class="person">
             </li>
-            <li><p><a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a></p></li>
+
             <li>
 
-                <span class="card thrown">&#x1f0a0;</span>
 
-                <span class="card">&#x1f0a1;</span>
-                <span class="card"> &#x1f0ae;</span>
+                                 <span class="card" ng-repeat="card in dealer.cards"
+                                       ng-bind-html="card.face | unsafe"> </span>
+            </li>
+            <li>
+            <li class="spacer"></li>
+                <h4 style="padding-right: 30px" class="">
+                    <span class="card-deck" ng-repeat="card in dealer.cardsDeck.cards">&#x1f0a0;</span>
+                </h4>
 
-                <span class="card"> &#x1f0b1;</span>
-                <span class="card"> &#x1f0be;</span>
+            </li>
+            <div class="form-group" >
 
-                <span class="card">&#x1f0c1;</span>
-                <span class="card"> &#x1f0ce;</span>
 
-                <span class="card"> &#x1f0d1;</span>
-                <span class="card"> &#x1f0de;</span></li>
+
+
+
+                <a class="btn btn-default btn-sm " ng-class="dealer.cards.length? 'disabled':''"
+                   ng-click="dealer.deal(players)">Deal</a>
+
+            </div>
         </ul>
     </div>
     <div id="page-content-wrapper">
         <div class="container-fluid ">
 
+            <div class="row player" ng-repeat="player in players track by $index">
+                <div class="spacer"></div>
+
+                <div class="col-sm-12">
+                    <div class="media">
+
+                        <div class="media-body text-right">
+                            <div class="spacer half"></div>
+
+                            <div class="">
+
+
+                                 <span class="card" ng-repeat="card in player.cards track by $index"
+                                       ng-bind-html="card.face | unsafe"> </span>
+
+
+                            </div>
+                            <div class="spacer half"></div>
+                            <div class="form-group"style="padding-right: 10px"
+                                 ng-if="dealer.playerTurn ==$index && player.cards.length"
+
+                                    >
+
+
+                                <a class="btn btn-primary hit btn-sm"
+                                   ng-click="dealer.giveCard(player,$last)">Hit me!
+                                </a>
+
+                                <div class="throwing-card">&#x1f0a0;</div>
+                                <a class="btn btn-default btn-sm"   ng-click="dealer.moveOn($last)">Stand</a>
+
+                            </div>
+                        </div>
+                        <div class="media-right text-center">
+
+                            <img class="media-object person" ng-src="images/{{player.name}}.gif">
+
+                            <span
+                                    class="label label-info ">{{player.name}}</span>
+                            <span ng-if="player.outofGame && !player.wonGame" class="label label-danger ">
+                            Lost</span>
+                             <span ng-if="player.outofGame && player.wonGame" class="label label-success ">
+                            Won</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
             <div class="spacer"></div>
-            <div class="row player">
 
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <div class="spacer"></div>
-                            <h4 class="media-heading">
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card thrown">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-                                <span class="card"> &#x1f0be;</span>
-
-                                </h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player1.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player2.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>  <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player3.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player4.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player5.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player6.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player7.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row player">
-                <div class="col-sm-12">
-                    <div class="media">
-                        <div class="media-body text-right">
-                            <h4 class="media-heading">
-                                <div class="spacer"></div>
-                                <div class="throwing-card">&#x1f0a0;</div>
-
-                                <span class="card">&#x1f0a1;</span>
-                                <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>  <span class="card"> &#x1f0ae;</span>
-
-                                <span class="card"> &#x1f0b1;</span>
-
-                                <span class="card">&#x1f0c1;</span></h4>
-                            <ul class="pager pull-right">
-                                <li><a href="#">Hit</a></li>
-                                <li><a href="#">Stand</a></li>
-                            </ul>
-                        </div>
-                        <div class="media-right">
-
-                            <img class="media-object person" src="images/player8.gif">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

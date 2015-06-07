@@ -7,8 +7,23 @@ body {
 
 }
 
+p, div, span {
+  user-select: none;
+}
+
 .spacer {
-  padding: 15px 0
+  padding: $padding-large-vertical 0;
+}
+.spacer.x2{
+  padding: $padding-large-vertical*2 0;
+}
+
+.spacer.half{
+  padding: $padding-large-vertical/2 0;
+}
+.make-invisible {
+  visibility: hidden;
+  cursor: default
 }
 
 #wrapper {
@@ -44,43 +59,47 @@ body {
   padding: $padding-large-horizontal;
 }
 
-.card, .throwing-card {
+.card, .throwing-card, .card-deck {
   color: #555555;
   font-size: 60px;
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
   cursor: default;
-  height: 604px;
+  height: 60px;
+
   background-color: white;
   display: inline-block;
   border-radius: 3px;
   line-height: 48px;
   border: solid 1px #444;
   margin: 0 0 0 -30px;
-  font-family: Arial Unicode MS;
+  font-family: Arial Unicode MS, serif;
   transition: all 0.2s ease 0s;
   z-index: 9;
-  transform: rotate(random(150) + deg);
 
 }
 
-@for $i from 0 through 5 {
-  .card:nth-child(#{$i}) {
+.card-deck {
+  transform: rotate(0deg);
+  margin: 0px -41px 0 0;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+@for $i from 0 through 14 {
+
+  .card:nth-child(#{$i}n+0) {
     transform: rotate(random(20) + deg);
 
   }
 }
 
 .throwing-card {
+  transform: rotate(100deg);
   right: 100%;
   visibility: hidden;
   float: left;
   position: absolute;
+  bottom: 0;
   transition: 0s
-}
-
-span.card.thrown {
-  margin: 0px 60px 0px 0px !important;
-
 }
 
 .card:nth-last-child(2) {
@@ -97,22 +116,16 @@ span.card.thrown {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .6);
 }
 
-.player:active .throwing-card {
-  right: 200px;
+.hit:active + .throwing-card {
+  right: 140px;
+  bottom: 20px;
   transition: all 0.5s ease 0s;
   visibility: visible;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   z-index: 1;
 }
 
-
 .player a {
-  opacity: 0;
-}
-
-
-.player:hover a {
-  opacity: 1;
   transition: all .4s ease 0s;
 }
 
@@ -139,8 +152,9 @@ span.card.thrown {
 }
 
 .person {
-  width: 140px;
-  padding: 30px 15px;
+  width: 90px;
+  margin: $padding-large-horizontal/2;
+
 }
 
 

@@ -1,12 +1,10 @@
-logs/*
 !.gitkeep
 
 tmp
 
-
 # Logs
 *.log
-
+logs/
 
 # Directory-based project format
 .idea/
@@ -17,14 +15,13 @@ tmp
 node_modules/
 bower_components/
 
-# Env variables
+#Env variables
 .env
 
 
-# Ignore CSS & Map File
-*.css
-*.map
-*.min.js
+# Ignore built files
+build/
+
 # OS generated files #
 ######################
 .DS_Store
