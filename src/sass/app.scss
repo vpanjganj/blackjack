@@ -10,6 +10,9 @@ body {
 p, div, span {
   user-select: none;
 }
+.label-as-badge {
+  border-radius: 1em;
+}
 
 .spacer {
   padding: $padding-large-vertical 0;
@@ -87,7 +90,7 @@ p, div, span {
 @for $i from 0 through 14 {
 
   .card:nth-child(#{$i}n+0) {
-    transform: rotate(random(20) + deg);
+    transform: rotate(random(15) + deg);
 
   }
 }
@@ -154,7 +157,7 @@ p, div, span {
 .person {
   width: 86px;
 
-  margin: $padding-large-horizontal;
+  margin:  $padding-large-horizontal $padding-large-horizontal*1.5;
 
 }
 

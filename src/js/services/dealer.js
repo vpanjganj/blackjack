@@ -100,7 +100,7 @@ services.factory('dealer', ['cardsDeck', '$timeout','$rootScope','$filter', func
             players[i].outOfGame = true;
         }
 
-
+        self.outOfGame = true;
 
 
     };

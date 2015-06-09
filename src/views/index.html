@@ -28,9 +28,13 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <img src="images/dealer.gif" class="person">
+
                 <div class="spacer half"></div>
-                 <span
-                         class="label" ng-class="dealer.outOfGame? (dealer.wonGame?'label-success': 'label-danger'):'label-info'">Dealer</span>
+               <span class="label label-as-badge"
+                   ng-if="dealer.outOfGame">{{dealer
+                   .cardsValue}}</span>   <span
+                    class="label"
+                    ng-class="dealer.outOfGame? (dealer.wonGame?'label-success': 'label-danger'):'label-info'">Dealer</span>
 
                             <span ng-if="dealer.outOfGame && !dealer.wonGame" class="label">
                             Lost</span>
@@ -42,20 +46,18 @@
             <li>
 
                 <div class="spacer"></div>
+
                                  <span class="card" ng-repeat="card in dealer.cards"
                                        ng-bind-html="card.face | unsafe"> </span>
             </li>
             <li>
             <li class="spacer"></li>
-                <h4 style="padding-right: 30px" class="">
-                    <span class="card-deck" ng-repeat="card in dealer.cardsDeck.cards">&#x1f0a0;</span>
-                </h4>
+            <h4 style="padding-right: 30px" class="">
+                <span class="card-deck" ng-repeat="card in dealer.cardsDeck.cards">&#x1f0a0;</span>
+            </h4>
 
             </li>
-            <div class="form-group" >
-
-
-
+            <div class="form-group">
 
 
                 <a class="btn btn-default " ng-class="dealer.cards.length? 'disabled':''"
@@ -76,16 +78,15 @@
                         <div class="media-body text-right">
                             <div class="spacer"></div>
 
-                            <div class="">
+
 
 
                                  <span class="card" ng-repeat="card in player.cards track by $index"
                                        ng-bind-html="card.face | unsafe"> </span>
 
 
-                            </div>
                             <div class="spacer"></div>
-                            <div class=""style="padding-right: 10px"
+                            <div class="" style="padding-right: 10px"
                                  ng-if="dealer.playerTurn ==(players.length - $index) && player.cards.length"
 
                                     >
@@ -96,16 +97,20 @@
                                 </a>
 
                                 <div class="throwing-card">&#x1f0a0;</div>
-                                <a class="btn btn-warning btn-sm"   ng-click="dealer.moveOn()">Stand</a>
+                                <a class="btn btn-warning btn-sm" ng-click="dealer.moveOn()">Stick</a>
 
                             </div>
                         </div>
                         <div class="media-right text-center">
 
                             <img class="media-object person" ng-src="images/{{player.name}}.gif">
-<div class="spacer half"></div>
-                            <span
-                                    class="label " ng-class="player.outOfGame? (player.wonGame?'label-success': 'label-danger'):'label-info'">{{player.name}}</span>
+
+                            <div class="spacer half"></div>
+                            <span class="label label-as-badge" ng-if="player.cardsValue>0">{{player
+                                .cardsValue}}</span>
+
+                            <span class="label"
+                                  ng-class="player.outOfGame? (player.wonGame?'label-success': 'label-danger'):'label-info'">{{player.name}}</span>
                             <span ng-if="player.outOfGame && !player.wonGame" class="label">
                             Lost</span>
                              <span ng-if="player.outOfGame && player.wonGame" class="label">
@@ -126,9 +131,11 @@
     </div>
 </div>
 
-<ng-include="startModal.html"></ng-include>
+<ng-include
+="startModal.html"></ng-include>
 
-<ng-include="finishModal.html"></ng-include>
+<ng-include
+="finishModal.html"></ng-include>
 
 
 <!-- Bootstrapsm and libs -->
