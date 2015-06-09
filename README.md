@@ -49,6 +49,11 @@ If it didn't work, try:
 ```
 sudo npm install
 ```
+You may also have to try this if npm couldn't execute bower and gulp commands followed by this message:
+npm WARN cannot run in wd blackjack@0.0.0 ./node_modules/bower/bin/bower install && ./node_modules/gulp/bin/gulp.js default
+```
+npm install --unsafe-perm
+```
 Behind the scenes this will also call `bower install`.  You should find that you have two new
 folders in your project.
 

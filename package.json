@@ -14,15 +14,15 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^1.3.3",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-watch": "^4.2.4"
+    "gulp-watch": "^4.2.4",
+    "http-server": "^0.8.0",
+    "jasmine": "^2.3.1",
+    "karma": "^0.12.36"
   },
   "scripts": {
-    "postinstall": "bower install && gulp default",
-    "prestart": "npm install",
+    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/gulp/bin/gulp.js default",
+    "prestart": "npm install --unsafe-perm",
     "start": "http-server -a localhost -p  8000 -c-1 build -o ",
     "pretest": "npm install"
-  },
-  "dependencies": {
-    "http-server": "^0.8.0"
   }
 }
