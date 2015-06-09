@@ -1,8 +1,6 @@
 # Blackjack
 
 This project is an implementation of a Blackjack game in [AngularJS](http://angularjs.org/).
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
 
 ## Getting Started
 
@@ -55,7 +53,7 @@ Behind the scenes this will also call `bower install`.  You should find that you
 folders in your project.
 
 * `node_modules` - contains the npm packages for the tools we need
-* `bower_components` - contains the angular framework and bootstrap files
+* `bower_components` - contains the angular and bootstrap files
 
 ### Run the Application
 
