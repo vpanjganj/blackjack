@@ -4,14 +4,14 @@ This project is an implementation of a Blackjack game in [AngularJS](http://angu
 
 ## Getting Started
 
-To get you started you can simply clone the Blackjack repository and install the dependencies:
+To get you started, simply clone the Blackjack repository and install the dependencies:
 
 ### Prerequisites
 
-You need git to clone the Blackjack repository. You can get git from
+Git is needed to clone the Blackjack repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-I have used a number of node.js tools to initialize run Blackjack. You must have node.js and
+A number of node.js tools to initialize run Blackjack. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
 ### Clone Blackjack
@@ -23,7 +23,7 @@ git clone https://github.com/vpanjganj/blackjack
 cd blackjack
 ```
 
-If you just want to start a new project without the Blackjack commit history then you can do:
+To start a new project without the Blackjack commit history you can do:
 
 ```bash
 git clone --depth=1 https://github.com/vpanjganj/blackjack <your-project-name>
@@ -33,18 +33,18 @@ The `depth=1` tells git to only pull down one commit worth of historical data.
 
 ### Install Dependencies
 
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools helps
-me manage the application.
+There are two kinds of dependencies in this project: tools and angular framework code.  The tools helps
+you to  manage the application.
 
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
+* Tools will be loaded via `npm`, the [node package manager][npm].
+* Angular and Bootstrap will be loaded via `bower`, a [client-side code package manager][bower].
 
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+'npm' is preconfigured to automatically run `bower` so please simply do:
 
 ```
 npm install
 ```
-or sometimes you may need:
+If it didn't work, try:
 
 ```
 sudo npm install
@@ -57,7 +57,7 @@ folders in your project.
 
 ### Run the Application
 
-I have preconfigured the project with a simple development web server.  The simplest way to start
+The project is preconfigured with a simple development web server.  The simplest way to start
 this server is:
 
 ```
