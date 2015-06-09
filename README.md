@@ -10,7 +10,7 @@ To get you started you can simply clone the Blackjack repository and install the
 
 ### Prerequisites
 
-You need git to clone the angular-seed repository. You can get git from
+You need git to clone the Blackjack repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
 I have used a number of node.js tools to initialize run Blackjack. You must have node.js and
@@ -46,7 +46,11 @@ We have preconfigured `npm` to automatically run `bower` so we can simply do:
 ```
 npm install
 ```
+or sometimes you may need:
 
+```
+sudo npm install
+```
 Behind the scenes this will also call `bower install`.  You should find that you have two new
 folders in your project.
 
