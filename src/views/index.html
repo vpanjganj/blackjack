@@ -28,11 +28,20 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <img src="images/dealer.gif" class="person">
+                <div class="spacer half"></div>
+                 <span
+                         class="label" ng-class="dealer.outOfGame? (dealer.wonGame?'label-success': 'label-danger'):'label-info'">Dealer</span>
+
+                            <span ng-if="dealer.outOfGame && !dealer.wonGame" class="label">
+                            Lost</span>
+                             <span ng-if="dealer.outOfGame && dealer.wonGame" class="label">
+                            Won</span>
+
             </li>
 
             <li>
 
-
+                <div class="spacer"></div>
                                  <span class="card" ng-repeat="card in dealer.cards"
                                        ng-bind-html="card.face | unsafe"> </span>
             </li>
@@ -49,8 +58,8 @@
 
 
 
-                <a class="btn btn-default btn-sm " ng-class="dealer.cards.length? 'disabled':''"
-                   ng-click="dealer.deal(players)">Deal</a>
+                <a class="btn btn-default " ng-class="dealer.cards.length? 'disabled':''"
+                   ng-click="dealer.deal(players)">Start to deal</a>
 
             </div>
         </ul>
@@ -65,7 +74,7 @@
                     <div class="media">
 
                         <div class="media-body text-right">
-                            <div class="spacer half"></div>
+                            <div class="spacer"></div>
 
                             <div class="">
 
@@ -75,32 +84,35 @@
 
 
                             </div>
-                            <div class="spacer half"></div>
-                            <div class="form-group"style="padding-right: 10px"
-                                 ng-if="dealer.playerTurn ==$index && player.cards.length"
+                            <div class="spacer"></div>
+                            <div class=""style="padding-right: 10px"
+                                 ng-if="dealer.playerTurn ==(players.length - $index) && player.cards.length"
 
                                     >
 
 
-                                <a class="btn btn-primary hit btn-sm"
-                                   ng-click="dealer.giveCard(player,$last)">Hit me!
+                                <a class="btn btn-info hit btn-sm" ng-hide="player.outOfGame"
+                                   ng-click="dealer.giveCard(player)">Hit me!
                                 </a>
 
                                 <div class="throwing-card">&#x1f0a0;</div>
-                                <a class="btn btn-default btn-sm"   ng-click="dealer.moveOn($last)">Stand</a>
+                                <a class="btn btn-warning btn-sm"   ng-click="dealer.moveOn()">Stand</a>
 
                             </div>
                         </div>
                         <div class="media-right text-center">
 
                             <img class="media-object person" ng-src="images/{{player.name}}.gif">
-
+<div class="spacer half"></div>
                             <span
-                                    class="label label-info ">{{player.name}}</span>
-                            <span ng-if="player.outofGame && !player.wonGame" class="label label-danger ">
+                                    class="label " ng-class="player.outOfGame? (player.wonGame?'label-success': 'label-danger'):'label-info'">{{player.name}}</span>
+                            <span ng-if="player.outOfGame && !player.wonGame" class="label">
                             Lost</span>
-                             <span ng-if="player.outofGame && player.wonGame" class="label label-success ">
+                             <span ng-if="player.outOfGame && player.wonGame" class="label">
                             Won</span>
+                            <span ng-if="dealer.playerTurn ==(players.length - $index) &&player.cards.length>=2 && !player.outOfGame"
+                                  class="label">
+                            playing</span>
                         </div>
 
                     </div>
@@ -113,6 +125,11 @@
         </div>
     </div>
 </div>
+
+<ng-include="startModal.html"></ng-include>
+
+<ng-include="finishModal.html"></ng-include>
+
 
 <!-- Bootstrapsm and libs -->
 <script src="angular.min.js"></script>
