@@ -52,7 +52,7 @@ sudo npm install
 If npm couldn't execute bower and gulp commands followed by this message:
 `npm WARN cannot run in wd blackjack@0.0.0 ./node_modules/bower/bin/bower install && ./node_modules/gulp/bin/gulp.js default`
 
-You may  have to try this i
+You may  have to try this 
 ```
 npm install --unsafe-perm
 ```
