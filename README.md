@@ -33,7 +33,7 @@ The `depth=1` tells git to only pull down one commit worth of historical data.
 
 ### Install Dependencies
 
-There are two kinds of dependencies in this project: tools and angular framework code.  The tools helps
+There are two kinds of dependencies in this project: tools and angular framework code.  These tools helps
 you to  manage the application.
 
 * Tools will be loaded via `npm`, the [node package manager][npm].
