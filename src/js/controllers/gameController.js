@@ -13,7 +13,7 @@ controllers.controller('gameController', ['$scope', 'player', 'dealer', 'nameGen
     var cardDealer = new dealer();
     cardDealer.cardsDeck.shuffle();
 
-    //Ask user to select number of players
+    //Ask the user to select number of players
     //by instantiating a modal
 
     var modalStartInstance = $modal.open({
@@ -43,6 +43,9 @@ controllers.controller('gameController', ['$scope', 'player', 'dealer', 'nameGen
     $scope.dealer = cardDealer;
     $scope.players = players;
 
+
+    //waiting for a call from Dealer, When she is finished with the last player,
+    //we run her autoPlay method
     $scope.$on('roundFinished', function () {
         cardDealer.play(players);
 

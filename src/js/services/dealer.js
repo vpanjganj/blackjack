@@ -6,7 +6,7 @@
 /*
  *Dealer is dependent on cards deck,
  *A simple dependency injection since the dealer needs the cards deck to begin with.
- * It has a deal method that gives each player and herself 2 cards and hides her own second card
+ *It has a deal method that gives each player and herself 2 cards and hides her own second card
  */
 services.factory('dealer', ['cardsDeck', '$timeout','$rootScope','$filter', function (cardsDeck, $timeout,$rootScope,$filter) {
 
@@ -88,7 +88,7 @@ services.factory('dealer', ['cardsDeck', '$timeout','$rootScope','$filter', func
 
         }
 
-
+        //Checking the score against whoever is left
         for (var i = 0; i < players.length; i++) {
             if(!players[i].outOfGame){
                 if(self.cardsValue>21 || players[i].cardsValue>=self.cardsValue){
@@ -100,22 +100,7 @@ services.factory('dealer', ['cardsDeck', '$timeout','$rootScope','$filter', func
             players[i].outOfGame = true;
         }
 
-  /*       //kick out every one with lower score
-            for (var i = 0; i < players.length; i++) {
 
-                if (self.cardsValue <= 21) {
-                    if (players[i].cardsValue >= self.cardsValue) {
-                        if(!players[i].outOfGame)
-                        players[i].won = true;
-
-                    }
-                }else if(!players[i].outOfGame){
-                    players[i].won = true;
-
-
-                }
-                players[i].outOfGame = true;
-            }*/
 
 
     };
