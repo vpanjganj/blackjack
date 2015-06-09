@@ -16,7 +16,7 @@ its package manager (npm) installed.  You can get them from [http://nodejs.org/]
 
 ### Clone Blackjack
 
-Clone the Blackjack repository using [git][git]:
+Clone the Blackjack repository using:
 
 ```
 git clone https://github.com/vpanjganj/blackjack
