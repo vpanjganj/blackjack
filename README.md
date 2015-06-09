@@ -36,8 +36,8 @@ The `depth=1` tells git to only pull down one commit worth of historical data.
 There are two kinds of dependencies in this project: tools and angular framework code.  These tools helps
 you to  manage the application.
 
-* Tools will be loaded via `npm`, the [node package manager][npm].
-* Angular and Bootstrap will be loaded via `bower`, a [client-side code package manager][bower].
+* Tools will be loaded via `npm`.
+* Angular and Bootstrap will be loaded via `bower`.
 
 'npm' is preconfigured to automatically run `bower` so please simply do:
 
