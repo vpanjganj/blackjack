@@ -63,7 +63,11 @@ this server is:
 ```
 npm start
 ```
+If it didn't work, try:
 
+```
+sudo npm start
+```
 It should open the browser automatically to the app at `http://localhost:8000/`.
 
 
