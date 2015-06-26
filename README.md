@@ -2,7 +2,7 @@
 
 This project is an implementation of a Blackjack game in [AngularJS](http://angularjs.org/).
 Before installing this app make sure your browser supports unicode rendering for the cards.
-[You should be able to see the cards on this page/](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)
+[You should be able to see the cards on this page](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)
 
 ## Getting Started
 
